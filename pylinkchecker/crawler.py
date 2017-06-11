@@ -14,11 +14,6 @@ from bs4 import BeautifulSoup
 from .compat import (range, HTTPError, get_url_open, unicode,
         get_content_type, get_url_request, NullHandler, Queue)
 from .models import (Config, WorkerInit, Response, PageCrawl,
-
-import .compat as compat
-from pylinkchecker.compat import (range, HTTPError, get_url_open, unicode,
-        get_content_type, get_url_request)
-from .models import (Config, WorkerInit, Response, PageCrawl,
         ExceptionStr, Link, SitePage, WorkerInput, TYPE_ATTRIBUTES, HTML_MIME_TYPE,
         MODE_THREAD, MODE_PROCESS, MODE_GREEN, WHEN_ALWAYS, UTF8Class,
         PageStatus, PageSource, PAGE_QUEUED, PAGE_CRAWLED, VERBOSE_QUIET,

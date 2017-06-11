@@ -12,15 +12,6 @@ from .models import Config
 
 
 def crawl(url):
-    """Crawls a URL and returns a crawler.Site instance.
-
-    :rtype: A crawler.Site instance
-
-from pylinkchecker.crawler import configure_logger, execute_from_config
-from pylinkchecker.models import Config
-
-
-def crawl(url):
     """Crawls a URL and returns a pylinkchecker.crawler.Site instance.
 
     :rtype: A pylinkchecker.crawler.Site instance
