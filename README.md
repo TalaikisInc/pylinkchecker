@@ -1,6 +1,6 @@
 pylinkchecker
 =============
-[![Build Status](https://travis-ci.org/xenu256/pylinkchecker.svg?branch=master)](https://travis-ci.org/xenu256/QProb)
+[![Build Status](https://travis-ci.org/xenu256/pylinkchecker.svg?branch=master)](https://travis-ci.org/xenu256/pylinkchecker)
 
 pylinkchecker is a standalone and pure python link checker and crawler that
 traverses a web site and reports errors (e.g., 500 and 404 errors) encountered.
