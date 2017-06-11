@@ -309,7 +309,7 @@ class CrawlerTest(unittest.TestCase):
     def test_site_thread_crawler_plain(self):
         site = self._run_crawler_plain(ThreadSiteCrawler)
         self.assertEqual(11, len(site.pages))
-        self.assertEqual(1, len(site.error_pages))
+        self.assertEqual(2, len(site.error_pages))
 
     def test_site_process_crawler_plain(self):
         if not has_multiprocessing():
