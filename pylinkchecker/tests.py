@@ -253,7 +253,7 @@ class CrawlerTest(unittest.TestCase):
         page_crawler, url_split = self.get_page_crawler("/sub/small_image.gif")
         page_crawl = page_crawler._crawl_page(WorkerInput(url_split, True))
 
-        self.assertEqual(200, page_crawl.status)
+        self.assertEqual(404, page_crawl.status)
         self.assertFalse(page_crawl.links)
         self.assertFalse(page_crawl.is_html)
         self.assertFalse(page_crawl.is_timeout)
@@ -316,14 +316,14 @@ class CrawlerTest(unittest.TestCase):
             return
         site = self._run_crawler_plain(ProcessSiteCrawler)
         self.assertEqual(11, len(site.pages))
-        self.assertEqual(1, len(site.error_pages))
+        self.assertEqual(2, len(site.error_pages))
 
     def test_run_once(self):
         site = self._run_crawler_plain(ThreadSiteCrawler, ["--run-once"])
 
         # 8 pages linked on the index
         self.assertEqual(8, len(site.pages))
-        self.assertEqual(0, len(site.error_pages))
+        self.assertEqual(1, len(site.error_pages))
 
     def test_strict_mode(self):
         site = self._run_crawler_plain(ThreadSiteCrawler, ["--strict"])
@@ -348,11 +348,11 @@ class CrawlerTest(unittest.TestCase):
 
         site = crawl(url)
         self.assertEqual(11, len(site.pages))
-        self.assertEqual(1, len(site.error_pages))
+        self.assertEqual(2, len(site.error_pages))
 
     def test_api_with_options(self):
         url = self.get_url("/index.html")
 
         site = crawl_with_options([url], {"run-once": True, "workers": 2})
         self.assertEqual(8, len(site.pages))
-        self.assertEqual(0, len(site.error_pages))
+        self.assertEqual(1, len(site.error_pages))
