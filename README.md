@@ -21,6 +21,7 @@ http://www.example.com/
 pylinkchecker can also be used programmatically by calling one of the functions
 in ``pylinkchecker.api``
 
+## This fork is Python 3.6+ ready.
 
 Quick Start
 -----------
